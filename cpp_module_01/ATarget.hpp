@@ -11,6 +11,7 @@ class ATarget
 {
     private:
         std::string _type;
+        ATarget&    operator=(const ATarget& rhs);
 
     public:
         ATarget(void);
