@@ -37,3 +37,7 @@ ATarget*    ATarget::clone(void)
     return (clone);
 }
 
+void    ATarget::getHitBySpell(const ASpell& spell)
+{
+    std::cout << this->getType() << " has been " << spell.getEffects() << "!" << std::endl;
+}

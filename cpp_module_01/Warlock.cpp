@@ -50,3 +50,20 @@ void    Warlock::introduce(void) const
 {
     std::cout << this->getName() << ": " << "I am " << this->getName() << ", " << this->getTitle() << std::endl;
 }
+
+void    Warlock::learnSpell(ASpell* spell)
+{
+    //add the spell to spellBook
+}
+
+void    Warlock::forgetSpell(std::string spell)
+{
+    //delete spell from spell book
+    //put in garbage??
+}
+
+void    Warlock::launchSpell(std::string spell, ATarget& target)
+{
+    //do nothing if spell not in the book
+    //not sure if I call getHitSpell of target
+}

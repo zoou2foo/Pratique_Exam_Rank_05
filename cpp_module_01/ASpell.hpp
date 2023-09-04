@@ -3,7 +3,9 @@
 
 #include <iostream>
 #include <string>
+#include "ATarget.hpp"
 
+class ATarget;
 class ASpell
 {
     private:
@@ -20,6 +22,7 @@ class ASpell
         std::string getName(void) const;
         std::string getEffects(void) const;
         virtual ASpell* clone(void);
+        void launch(const ATarget& target);
 };
 
 #endif

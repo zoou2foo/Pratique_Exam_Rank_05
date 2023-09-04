@@ -40,3 +40,8 @@ ASpell* ASpell::clone(void)
     ASpell* clone = new ASpell(this->getName(), this->getEffects());
     return (clone);
 }
+
+void    ASpell::launch(const ATarget& target)
+{
+    target.getHitBySpell(*this);
+}

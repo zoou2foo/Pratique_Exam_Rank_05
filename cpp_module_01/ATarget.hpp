@@ -10,7 +10,7 @@ class ASpell;
 class ATarget
 {
     private:
-        std::string _type;
+        const std::string _type;
         ATarget&    operator=(const ATarget& rhs);
 
     public:
@@ -22,7 +22,6 @@ class ATarget
         const std::string&  getType(void) const;
         virtual ATarget*    clone(void);
         void    getHitBySpell(const ASpell& spell);
-        void    launch(const ATarget& target);
 
 };
 

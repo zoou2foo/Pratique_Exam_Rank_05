@@ -6,6 +6,8 @@
 #include <string>
 #include "ASpell.hpp"
 #include "ATarget.hpp"
+#include "Dummy.hpp"
+#include "Fwoosh.hpp"
 
 class ASpell;
 class ATarget;

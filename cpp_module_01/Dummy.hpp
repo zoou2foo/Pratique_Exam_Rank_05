@@ -6,6 +6,7 @@
 class Dummy: public ATarget
 {
     private:
+        std::string _type;
         Dummy(const Dummy& copy);
         Dummy& operator=(const Dummy& rhs);
 
