@@ -5,7 +5,7 @@ ASpell::ASpell(void)
     return;
 }
 
-ASpell::ASpell(std::string name, std::string effects) : _name(name), _effects(effects)
+ASpell::ASpell(const std::string &name, const std::string &effects) : _name(name), _effects(effects)
 {
     return;
 }
@@ -22,26 +22,29 @@ ASpell::~ASpell(void)
 
 ASpell& ASpell::operator=(const ASpell& rhs)
 {
+    this->_name = rhs.getName();
+    this->_effects = rhs.getEffects();
     return (*this);
 }
 
-std::string ASpell::getName(void) const
+std::string const & ASpell::getName(void) const
 {
     return (this->_name);
 }
 
-std::string ASpell::getEffects(void) const
+std::string const & ASpell::getEffects(void) const
 {
     return (this->_effects);
 }
 
-ASpell* ASpell::clone(void)
-{
-    ASpell* clone = new ASpell(this->getName(), this->getEffects());
-    return (clone);
-}
+/*Pure method!*/
+// ASpell* ASpell::clone(void) 
+// {
+//     ASpell* clone = new ASpell(this->getName(), this->getEffects());
+//     return (clone);
+// }
 
-void    ASpell::launch(const ATarget& target)
+void    ASpell::launch(ATarget const &target) const
 {
-    target.getHitBySpell(*this);
+    target.getHitBySpell((*this));
 }

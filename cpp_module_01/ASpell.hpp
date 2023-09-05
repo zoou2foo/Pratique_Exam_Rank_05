@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <string>
-#include "ATarget.hpp"
+//#include "ATarget.hpp"
 
 class ATarget;
 class ASpell
@@ -14,15 +14,17 @@ class ASpell
     
     public:
         ASpell(void);
-        ASpell(std::string name, std::string effects);
+        ASpell(const std::string &name, const std::string &effects);
         ASpell(const ASpell &copy);
         virtual ~ASpell(void);
 
         ASpell& operator=(const ASpell &rhs);
-        std::string getName(void) const;
-        std::string getEffects(void) const;
-        virtual ASpell* clone(void);
-        void launch(const ATarget& target);
+        std::string const & getName(void) const;
+        std::string const & getEffects(void) const;
+        virtual ASpell* clone(void) = 0;
+        void launch(ATarget const &target) const;
 };
 
+
+#include "ATarget.hpp"
 #endif
