@@ -38,7 +38,7 @@ std::string const & ASpell::getEffects(void) const
 }
 
 /*Pure method!*/
-// ASpell* ASpell::clone(void) 
+// ASpell* ASpell::clone(void)
 // {
 //     ASpell* clone = new ASpell(this->getName(), this->getEffects());
 //     return (clone);

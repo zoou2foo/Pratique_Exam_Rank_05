@@ -3,17 +3,17 @@
 
 #include <iostream>
 #include <string>
-//#include "ATarget.hpp"
+#include "ATarget.hpp"
 
 class ATarget;
 class ASpell
 {
-    private:
+    protected:
         std::string _name;
         std::string _effects;
-    
-    public:
         ASpell(void);
+
+    public:
         ASpell(const std::string &name, const std::string &effects);
         ASpell(const ASpell &copy);
         virtual ~ASpell(void);

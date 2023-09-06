@@ -17,6 +17,8 @@ Fwoosh::~Fwoosh(void)
 
 Fwoosh& Fwoosh::operator=(const Fwoosh& rhs)
 {
+    this->_name = rhs.getName();
+    this->_effects = rhs.getEffects();
     return (*this);
 }
 

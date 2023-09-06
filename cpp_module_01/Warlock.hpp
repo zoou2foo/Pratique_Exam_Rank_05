@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <string>
+#include <map>
 #include "ASpell.hpp"
 #include "ATarget.hpp"
 #include "Dummy.hpp"
@@ -12,7 +13,7 @@
 class ASpell;
 class ATarget;
 
-class Warlock 
+class Warlock
 {
     private:
         std::string _name;
@@ -20,19 +21,19 @@ class Warlock
         Warlock(); //default
         Warlock(const Warlock &copy); //by copy
         Warlock& operator=(const Warlock &rhs);
-        std::string _spellBook[];
+        std::map<std::string, ASpell*> spellBook;
 
     public:
-        Warlock(std::string name, std::string title); //do I need to add const + &??
+        Warlock(std::string const &name, std::string const &title); //do I need to add const + &??
         ~Warlock(); //destructor
 
-        std::string getName(void) const; //add const with string?? for both
-        std::string getTitle(void) const;
-        void    setTitle(std::string title); //const + &???
+        std::string const& getName(void) const; //add const with string?? for both
+        std::string const& getTitle(void) const;
+        void    setTitle(std::string const &title); //const + &???
         void    introduce(void) const;
         void    learnSpell(ASpell* spell);
         void    forgetSpell(std::string spell);
-        void    launchSpell(std::string spell, ATarget& target);
+        void    launchSpell(std::string spellName, ATarget& target);
 
 };
 

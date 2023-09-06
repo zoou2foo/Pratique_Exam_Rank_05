@@ -11,7 +11,7 @@ Warlock::Warlock(const Warlock &copy)
     return;
 }
 
-Warlock::Warlock(std::string name, std::string title) : _name(name), _title(title)
+Warlock::Warlock(std::string const &name, std::string const &title) : _name(name), _title(title)
 {
     std::cout << this->getName() << ": This looks like another boring day." << std::endl;
     return;
@@ -30,17 +30,17 @@ Warlock&    Warlock::operator=(const Warlock &rhs)
     return (*this);
 }
 
-std::string Warlock::getName(void) const
+std::string const & Warlock::getName(void) const
 {
     return (this->_name);
 }
 
-std::string Warlock::getTitle(void) const
+std::string const & Warlock::getTitle(void) const
 {
     return (this->_title);
 }
 
-void    Warlock::setTitle(std::string title)
+void    Warlock::setTitle(std::string const &title)
 {
     this->_title = title;
 }
@@ -53,17 +53,19 @@ void    Warlock::introduce(void) const
 
 void    Warlock::learnSpell(ASpell* spell)
 {
-    //add the spell to spellBook
+	this->spellBook.insert(std::pair<std::string, ASpell *>(spell->getName(), spell));
 }
 
 void    Warlock::forgetSpell(std::string spell)
 {
-    //delete spell from spell book
-    //put in garbage??
+	this->spellBook.erase(spell);
 }
 
-void    Warlock::launchSpell(std::string spell, ATarget& target)
+void    Warlock::launchSpell(std::string spellName, ATarget& target)
 {
     //do nothing if spell not in the book
     //not sure if I call getHitSpell of target
+	ASpell * spell = spellBook[spellName];
+	if (spell)
+		spell->launch(target);
 }

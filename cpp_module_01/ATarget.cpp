@@ -23,10 +23,11 @@ ATarget::~ATarget(void)
 
 ATarget&    ATarget::operator=(const ATarget& rhs)
 {
+    this->_type = rhs.getType();
     return (*this);
 }
 
-const std::string&  ATarget::getType(void)
+const std::string&  ATarget::getType(void) const
 {
     return (this->_type);
 }
@@ -37,7 +38,7 @@ ATarget*    ATarget::clone(void)
     return (clone);
 }
 
-void    ATarget::getHitBySpell(const ASpell& spell)
+void    ATarget::getHitBySpell(const ASpell & spell) const
 {
     std::cout << this->getType() << " has been " << spell.getEffects() << "!" << std::endl;
 }
