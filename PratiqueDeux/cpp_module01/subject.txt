@@ -7,7 +7,6 @@ Expected files   : Warlock.cpp Warlock.hpp
 In the Warlock class, the switch statement is FORBIDDEN and its use would
 result in a -42.
 
---------------------------------------------------------------------------------
 Create an abstract class called ASpell, in Coplien's form, that has the
 following protected attributes:
 
@@ -42,6 +41,7 @@ It will display :
 <TYPE> is the ATarget's type, and <EFFECTS> is the return of the ASpell's
 getEffects function.
 
+--------------------------------------------------------------------------------
 Finally, add to your ASpell class a launch function that takes a reference to
 constant ATarget.
 
