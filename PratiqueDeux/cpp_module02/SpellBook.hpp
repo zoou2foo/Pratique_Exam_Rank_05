@@ -6,6 +6,7 @@
 
 class ASpell;
 
+
 class SpellBook {
     private:
         SpellBook(const SpellBook &copy);
