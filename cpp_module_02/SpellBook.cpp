@@ -18,6 +18,7 @@ void SpellBook::learnSpell(ASpell* spell)
 
 void SpellBook::forgetSpell(std::string const &spell)
 {
+	
 	this->spellBook.erase(spell);
 }
 

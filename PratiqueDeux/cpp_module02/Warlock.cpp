@@ -28,19 +28,18 @@ void    Warlock::introduce(void) const {
 }
 
 void    Warlock::learnSpell(ASpell* spell) {
-    if (spell) //in case it's null
-        this->_spellBook[spell->getName()] = spell->clone();
+    this->_book.learnSpell(spell);
 }
 
 void    Warlock::forgetSpell(std::string spellName) {
-    std::map<std::string, ASpell*>::iterator it = this->_spellBook.find(this->getName());
-    if (it != this->_spellBook.end())
-        delete it->second;
-    this->_spellBook.erase(spellName);
+    this->_book.forgetSpell(spellName);
 }
 
 void    Warlock::launchSpell(std::string spellName, const ATarget& target) {
-    ASpell* spell = this->_spellBook[spellName]; //on cree une instance ASpell au nom du spell
+    ATarget const *test = 0;
+    if (test == &target)
+        return;
+    ASpell* spell = this->_book.createSpell(spellName); //on cree une instance ASpell au nom du spell
     if (spell) //spell is not NULL
         spell->launch(target);
 }
