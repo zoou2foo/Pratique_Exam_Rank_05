@@ -27,19 +27,19 @@ void    Warlock::introduce(void) const {
 }
 
 void    Warlock::learnSpell(ASpell* spell) {
-	if (spell) //in case it's null
-		this->_spellBook[spell->getName()] = spell->clone();
+	if (spell) //need to check that the pointer is NOT null
+		this->_spellBook[spell->getName()] = spell->clone(); //in our container, a key becomes the name of the spell and the value associated with it is a copy of ASpell.
 }
 
 void    Warlock::forgetSpell(std::string spellName) {
-	std::map<std::string, ASpell*>::iterator it = this->_spellBook.find(spellName);
-	if (it != this->_spellBook.end())
-		delete it->second;
-	this->_spellBook.erase(spellName);
+	std::map<std::string, ASpell*>::iterator it = this->_spellBook.find(spellName); //iterator to find if spell is in the container
+	if (it != this->_spellBook.end()) //if iterator is NOT at the end; it found the spell
+		delete it->second; //delete the value, ASpell*
+	this->_spellBook.erase(spellName); //then, erase/delete the key, spellName
 }
 
 void    Warlock::launchSpell(std::string spellName, const ATarget& target) {
-	ASpell* spell = this->_spellBook[spellName]; //on cree une instance ASpell au nom du spell; to retrieve the spell in question
-	if (spell) //spell is not NULL
-		spell->launch(target);
+	ASpell* spell = this->_spellBook[spellName]; //we create an instance of ASpell by associating it with the key(of spellName) from our map container
+	if (spell) //to make sure that spell is not NULL or empty
+		spell->launch(target); //then, we can launch the spell on the target received
 }
