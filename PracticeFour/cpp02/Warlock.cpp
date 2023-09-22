@@ -1,0 +1,41 @@
+#include "Warlock.hpp"
+
+Warlock::Warlock(std::string const &name, std::string const &title) : _name(name), _title(title) { 
+	std::cout << this->getName() << ": This looks like another boring day." << std::endl;
+	std::map<std::string, ASpell*>::iterator it = this->_spellBook.begin();
+	std::map<std::string, ASpell*>::iterator ite = this->_spellBook.end();
+	while (it != ite) {
+		delete it->second;
+		it++;
+	}
+	this->_spellBook.clear();
+	return; }
+Warlock::~Warlock(void) {
+	std::cout << this->getName() << ": My job here is done!" << std::endl;
+	return; }
+
+std::string const & Warlock::getName(void) const { return (this->_name); }
+std::string const & Warlock::getTitle(void) const { return (this->_title); }
+void				Warlock::setTitle(std::string const &title) { this->_title = title; }
+void				Warlock::introduce(void) const { 
+	std::cout << this->getName() << ": I am " << this->getName() << ", " << this->getTitle() << "!" << std::endl;
+}
+
+void	Warlock::learnSpell(ASpell* spell){
+	this->_book.learnSpell(spell);
+}
+
+void	Warlock::forgetSpell(std::string const &spellName){
+	this->_book.forgetSpell(spellName);
+}
+
+void	Warlock::launchSpell(std::string spellName, ATarget const &target){
+	//test target ref if at zero or not
+	ATarget const *testTarget = 0;
+	if (testTarget == &target)
+		return;
+	//to make sure that the spell exists and it's not at NULL
+	ASpell *test = this->_book.createSpell(spellName);
+	if (test)
+		test->launch(target);
+}
