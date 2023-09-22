@@ -9,7 +9,7 @@ class BrickWall : public ATarget {
 	public:
 		BrickWall(void);
 		~BrickWall(void);
-		BrickWall* clone(void) const;
+		virtual BrickWall* clone(void) const;
 };
 
 #endif

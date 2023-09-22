@@ -1,6 +1,6 @@
 #include "Warlock.hpp"
 
-Warlock::Warlock(std::string const &name, std::string const &title) : _name(name), _title(title) { 
+Warlock::Warlock(std::string const &name, std::string const &title) : _name(name), _title(title) {
 	std::cout << this->getName() << ": This looks like another boring day." << std::endl;
 	std::map<std::string, ASpell*>::iterator it = this->_spellBook.begin();
 	std::map<std::string, ASpell*>::iterator ite = this->_spellBook.end();
@@ -17,7 +17,7 @@ Warlock::~Warlock(void) {
 std::string const & Warlock::getName(void) const { return (this->_name); }
 std::string const & Warlock::getTitle(void) const { return (this->_title); }
 void				Warlock::setTitle(std::string const &title) { this->_title = title; }
-void				Warlock::introduce(void) const { 
+void				Warlock::introduce(void) const {
 	std::cout << this->getName() << ": I am " << this->getName() << ", " << this->getTitle() << "!" << std::endl;
 }
 
