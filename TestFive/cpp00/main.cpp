@@ -32,7 +32,6 @@ bob = jim;                              //Does not compile
 Warlock jack(jim);                      //Does not compile
 
 Upon creation, the Warlock says :
-*/
 
 <NAME>: This looks like another boring day.
 
@@ -54,6 +53,9 @@ It must display:
 <NAME>: I am <NAME>, <TITLE>!
 
 Here's an example of a test main function and its associated output:
+*/
+
+#include "Warlock.hpp"
 
 int main()
 {
@@ -70,7 +72,7 @@ int main()
 
   return (0);
 }
-
+/*
 ~$ ./a.out | cat -e
 Richard: This looks like another boring day.$
 Richard: I am Richard, Mistress of Magma!$
@@ -81,3 +83,4 @@ Jack: I am Jack, the Mighty!$
 Jack: My job here is done!$
 Richard: My job here is done!$
 ~$
+*/
