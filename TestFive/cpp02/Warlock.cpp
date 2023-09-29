@@ -2,6 +2,13 @@
 
 Warlock::Warlock(std::string const &name, std::string const &title) : _name(name), _title(title){
 	std::cout << this->getName() << ": This looks like another boring day." << std::endl;
+	// std::map<std::string, ASpell*>::iterator it = this->_book.begin();
+	// std::map<std::string, ASpell*>::iterator ite = this->_book.end();
+	// while (it != ite) {
+	// 	delete it->second;
+	// 	it++;
+	// }
+	// this->_book.clear();
 	return;
 }
 

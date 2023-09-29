@@ -6,6 +6,8 @@
 #include <map>
 #include "ASpell.hpp"
 
+class ASpell;
+
 class SpellBook{
 	private:
 		SpellBook(SpellBook const &copy);

@@ -9,7 +9,7 @@ class Fireball : public ASpell {
 	public:
 		Fireball(void);
 		~Fireball(void);
-		Fireball* clone(void) const;
+		virtual Fireball* clone(void) const;
 };
 
 #endif

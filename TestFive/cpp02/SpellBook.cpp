@@ -2,14 +2,14 @@
 
 SpellBook::SpellBook(void) { return; }
 SpellBook::~SpellBook(void) { 
-	std::map<std::string, ASpell*>::iterator it = this->_book.begin();
-	std::map<std::string, ASpell*>::iterator ite = this->_book.end();
-	while (it != ite)
-	{
-		delete it->second;
-		it++;
-	}
-	this->_book.clear();
+	// std::map<std::string, ASpell*>::iterator it = this->_book.begin();
+	// std::map<std::string, ASpell*>::iterator ite = this->_book.end();
+	// while (it != ite)
+	// {
+	// 	delete it->second;
+	// 	it++;
+	// }
+	// this->_book.clear();
 	return; }
 
 void	SpellBook::learnSpell(ASpell* spell){

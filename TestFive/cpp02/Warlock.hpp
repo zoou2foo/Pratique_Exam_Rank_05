@@ -8,6 +8,9 @@
 #include "ATarget.hpp"
 #include "SpellBook.hpp"
 
+class ASpell;
+class SpellBook;
+
 class Warlock {
 	private:
 		std::string	_name;
@@ -15,7 +18,7 @@ class Warlock {
 		Warlock(void);
 		Warlock(Warlock const &copy);
 		Warlock&			operator=(Warlock const &rhs);
-		std::map<std::string, ASpell*> _spellBook;
+		//std::map<std::string, ASpell*> _spellBook;
 		SpellBook _book;
 
 	public:

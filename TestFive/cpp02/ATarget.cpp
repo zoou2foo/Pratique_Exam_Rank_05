@@ -1,7 +1,7 @@
 #include "ATarget.hpp"
 
 ATarget::ATarget(void) { return; }
-ATarget::ATarget(std::string type) : _type(type) { return; }
+ATarget::ATarget(std::string const &type) : _type(type) { return; }
 ATarget::ATarget(ATarget const &copy) { *this = copy; }
 ATarget::~ATarget(void) { return ; }
 

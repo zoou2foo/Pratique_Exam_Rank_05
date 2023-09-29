@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include <string>
-#include <map>
 #include "ATarget.hpp"
 
 class ATarget;
@@ -15,7 +14,7 @@ class ASpell {
 
 	public:
 		ASpell(void);
-		ASpell(std::string name, std::string effects);
+		ASpell(std::string const &name, std::string const &effects);
 		ASpell(ASpell const &copy);
 		virtual ~ASpell(void);
 

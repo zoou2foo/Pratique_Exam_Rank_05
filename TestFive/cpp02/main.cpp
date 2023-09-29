@@ -65,6 +65,7 @@ to use your own aswell.
 #include "Polymorph.hpp"
 #include "TargetGenerator.hpp"
 #include "Fireball.hpp"
+#include "SpellBook.hpp"
 
 int main()
 {
@@ -83,7 +84,6 @@ int main()
   richard.learnSpell(fireball);
 
   ATarget* wall = tarGen.createTarget("Inconspicuous Red-brick Wall");
-
   richard.introduce();
   richard.launchSpell("Polymorph", *wall);
   richard.launchSpell("Fireball", *wall);

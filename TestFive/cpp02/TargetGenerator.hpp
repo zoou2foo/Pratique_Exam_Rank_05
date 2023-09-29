@@ -6,6 +6,8 @@
 #include <iostream>
 #include <map>
 
+class ATarget;
+
 class TargetGenerator {
 	private:
 		TargetGenerator(TargetGenerator const &copy);

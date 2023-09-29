@@ -8,12 +8,12 @@
 class ASpell;
 
 class ATarget {
-	private:
+	protected:
 		std::string	_type;
 
 	public:
 		ATarget(void);
-		ATarget(std::string type);
+		ATarget(std::string const &type);
 		ATarget(ATarget const &copy);
 		virtual ~ATarget(void);
 
