@@ -50,7 +50,6 @@ constant ATarget.
 This one will simply call the getHitBySpell of the passed object, passing the
 current instance as parameter.
 
-*/
 When all this is done, create an implementation of ASpell called Fwoosh. Its
 default constructor will set the name to "Fwoosh" and the effects to
 "fwooshed". You will, of course, implement the clone() method. In the case of
@@ -72,6 +71,12 @@ You will need a new attribute to store the spells your Warlock knows. Several
 types fit the bill, it's up to you to choose the best one.
 
 Below is a possible test main and its expected output:
+*/
+#include "Warlock.hpp"
+#include "ASpell.hpp"
+#include "ATarget.hpp"
+#include "Dummy.hpp"
+#include "Fwoosh.hpp"
 
 int main()
 {
@@ -89,8 +94,10 @@ int main()
   richard.launchSpell("Fwoosh", bob);
 }
 
+/*
 ~$ ./a.out | cat -e
 Richard: This looks like another boring day.$
 Richard: I am Richard, the Titled!$
 Target Practice Dummy has been fwooshed!$
 Richard: My job here is done!$
+*/

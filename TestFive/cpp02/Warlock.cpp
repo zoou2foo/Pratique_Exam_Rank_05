@@ -19,19 +19,18 @@ void				Warlock::introduce(void) const {
 }
 
 void				Warlock::learnSpell(ASpell* spell){
-	if (spell)
-		this->_spellBook[spell->getName()] = spell;
+	this->_book.learnSpell(spell);
 }
 
 void				Warlock::forgetSpell(std::string const &spellName){
-	std::map<std::string, ASpell*>::iterator it = this->_spellBook.find(spellName);
-	if (it != this->_spellBook.end())
-		delete it->second;
-	this->_spellBook.erase(spellName);
+	this->_book.forgetSpell(spellName);
 }
 
-void				Warlock::launchSpell(std::string const &spellName, ATarget const &target){
-	ASpell *test = this->_spellBook[spellName];
+void				Warlock::launchSpell(std::string spellName, ATarget const &target){
+	ATarget const *testRef = 0;
+	if (testRef == &target)
+		return;
+	ASpell *test = this->_book.createSpell(spellName);
 	if (test)
 		test->launch(target);
 }

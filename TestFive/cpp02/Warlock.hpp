@@ -6,6 +6,7 @@
 #include <map>
 #include "ASpell.hpp"
 #include "ATarget.hpp"
+#include "SpellBook.hpp"
 
 class Warlock {
 	private:
@@ -15,6 +16,7 @@ class Warlock {
 		Warlock(Warlock const &copy);
 		Warlock&			operator=(Warlock const &rhs);
 		std::map<std::string, ASpell*> _spellBook;
+		SpellBook _book;
 
 	public:
 		Warlock(std::string const &name, std::string const &title);
@@ -26,7 +28,7 @@ class Warlock {
 		void				introduce(void) const;
 		void				learnSpell(ASpell* spell);
 		void				forgetSpell(std::string const &spellName);
-		void				launchSpell(std::string const &spellName, ATarget const &target);
+		void				launchSpell(std::string spellName, ATarget const &target);
 
 
 };
